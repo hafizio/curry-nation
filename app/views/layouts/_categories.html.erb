@@ -1,0 +1,25 @@
+<h3 class="text-center">Categories</h3>
+<div class="panel callout radius">
+  <h6>Food Preferences</h6>
+  <ul class="square">
+  <% @food_preferences.each do |fp| %>
+    <li><%= fp %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="panel callout radius">
+  <h6>Food Types</h6>
+  <ul class="square">
+  <% @food_types.each do |ft| %>
+    <li><%= ft %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="panel callout radius">
+  <h6>Cuisines</h6>
+  <ul class="square">
+  <% @cuisines.each do |c| %>
+    <li><%= c %></li>
+  <% end %>
+  </ul>
+</div>

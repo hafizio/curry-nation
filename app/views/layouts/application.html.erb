@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Curry Nation" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Curry Nation" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <div class="row">
+      <div class="large-centered-6 columns">
+        <%= render 'layouts/messages' %>
+      </div>
+    </div>
+    <main class="row">
+      <div class="large-3 columns">
+        <%= render 'layouts/categories' %>
+      </div>
+      <div class="large-9 columns">
+        <%= yield %>
+      </div>
+    </main>
+  </body>
+</html>
