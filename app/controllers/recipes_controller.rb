@@ -3,7 +3,11 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
+    if params[:sort_by].blank?
+      @recipes = Recipe.all
+    else
+      @recipes = Recipe.where(params[:sort_by])
+    end
   end
 
   def show

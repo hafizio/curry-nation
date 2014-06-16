@@ -6,9 +6,8 @@ class ApplicationController < ActionController::Base
 
   private
   def sidebar_values
-    @food_preferences = FoodPreference.select(:name).map { |x| x.name }
-    @food_types = FoodType.select(:name).map { |x| x.name }
-    @cuisines = Cuisine.select(:name).map { |x| x.name }
+    @food_preferences = FoodPreference.all
+    @food_types = FoodType.all
+    @cuisines = Cuisine.all
   end
-  # @food_preferences = FoodPreference.all
 end

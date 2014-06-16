@@ -3,7 +3,7 @@
   <h6>Food Preferences</h6>
   <ul class="square">
   <% @food_preferences.each do |fp| %>
-    <li><%= fp %></li>
+    <li><%= link_to "#{fp.name}", recipes_path(sort_by: { food_preference_id: fp.id }) %></li>
   <% end %>
   </ul>
 </div>
@@ -11,15 +11,15 @@
   <h6>Food Types</h6>
   <ul class="square">
   <% @food_types.each do |ft| %>
-    <li><%= ft %></li>
+    <li><%= link_to "#{ft.name}", recipes_path(sort_by: { food_type_id: ft.id }) %></li>
   <% end %>
   </ul>
 </div>
 <div class="panel callout radius">
   <h6>Cuisines</h6>
   <ul class="square">
-  <% @cuisines.each do |c| %>
-    <li><%= c %></li>
+  <% @cuisines.each do |cu| %>
+    <li><%= link_to "#{cu.name}", recipes_path(sort_by: { cuisine_id: cu.id }) %></li>
   <% end %>
   </ul>
 </div>
